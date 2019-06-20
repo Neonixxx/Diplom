@@ -24,7 +24,7 @@ namespace Core.StraightLineTaskGenerators
         public override string GetString()
         {
             return $"{base.GetString()}" +
-                   $"{Environment.NewLine}Найти нормальный вектор." +
+                   $"{Environment.NewLine}Найти нормальный вектор N(x, y)." +
                    $"{Environment.NewLine}Ответ введите в формате: \"x, y\".";
         }
     }

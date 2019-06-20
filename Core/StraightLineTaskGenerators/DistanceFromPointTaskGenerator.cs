@@ -60,7 +60,8 @@ namespace Core.StraightLineTaskGenerators
         public override string GetString()
         {
             return $"{base.GetString()}" +
-                   $"{Environment.NewLine}Найти расстояние от точки M({_mA.ToStringWithZero()}; {_mB.ToStringWithZero()}).";
+                   $"{Environment.NewLine}Найти расстояние от точки M({_mA.ToStringWithZero()}; {_mB.ToStringWithZero()})" +
+                   $"{Environment.NewLine}(Пример: 16/3).";
         }
     }
 }
