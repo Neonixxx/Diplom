@@ -47,9 +47,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.label1.Location = new System.Drawing.Point(83, 35);
+            this.label1.Location = new System.Drawing.Point(111, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 29);
+            this.label1.Size = new System.Drawing.Size(389, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Результаты тестирования";
             // 
@@ -57,9 +58,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(85, 80);
+            this.label2.Location = new System.Drawing.Point(113, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Студент:";
             // 
@@ -67,9 +69,10 @@
             // 
             this.StudentInfoLabel.AutoSize = true;
             this.StudentInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
-            this.StudentInfoLabel.Location = new System.Drawing.Point(230, 76);
+            this.StudentInfoLabel.Location = new System.Drawing.Point(307, 94);
+            this.StudentInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInfoLabel.Name = "StudentInfoLabel";
-            this.StudentInfoLabel.Size = new System.Drawing.Size(131, 17);
+            this.StudentInfoLabel.Size = new System.Drawing.Size(161, 22);
             this.StudentInfoLabel.TabIndex = 2;
             this.StudentInfoLabel.Text = "StudentInfoLabel";
             // 
@@ -77,9 +80,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(85, 150);
+            this.label5.Location = new System.Drawing.Point(113, 185);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 13);
+            this.label5.Size = new System.Drawing.Size(148, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Правильных ответов:";
             // 
@@ -87,9 +91,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(85, 130);
+            this.label6.Location = new System.Drawing.Point(113, 160);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Всего вопросов:";
             // 
@@ -97,9 +102,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(85, 110);
+            this.label7.Location = new System.Drawing.Point(113, 135);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Дата:";
             // 
@@ -107,9 +113,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(85, 170);
+            this.label8.Location = new System.Drawing.Point(113, 209);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 13);
+            this.label8.Size = new System.Drawing.Size(164, 17);
             this.label8.TabIndex = 7;
             this.label8.Text = "Неправильных ответов:";
             // 
@@ -117,9 +124,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(85, 190);
+            this.label9.Location = new System.Drawing.Point(113, 234);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 13);
+            this.label9.Size = new System.Drawing.Size(144, 17);
             this.label9.TabIndex = 8;
             this.label9.Text = "Затрачено времени:";
             // 
@@ -127,9 +135,10 @@
             // 
             this.TimeSpentLabel.AutoSize = true;
             this.TimeSpentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.TimeSpentLabel.Location = new System.Drawing.Point(230, 190);
+            this.TimeSpentLabel.Location = new System.Drawing.Point(307, 234);
+            this.TimeSpentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TimeSpentLabel.Name = "TimeSpentLabel";
-            this.TimeSpentLabel.Size = new System.Drawing.Size(98, 13);
+            this.TimeSpentLabel.Size = new System.Drawing.Size(125, 17);
             this.TimeSpentLabel.TabIndex = 14;
             this.TimeSpentLabel.Text = "TimeSpentLabel";
             // 
@@ -137,9 +146,10 @@
             // 
             this.FailedTaksCountLabel.AutoSize = true;
             this.FailedTaksCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.FailedTaksCountLabel.Location = new System.Drawing.Point(230, 170);
+            this.FailedTaksCountLabel.Location = new System.Drawing.Point(307, 209);
+            this.FailedTaksCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FailedTaksCountLabel.Name = "FailedTaksCountLabel";
-            this.FailedTaksCountLabel.Size = new System.Drawing.Size(133, 13);
+            this.FailedTaksCountLabel.Size = new System.Drawing.Size(169, 17);
             this.FailedTaksCountLabel.TabIndex = 13;
             this.FailedTaksCountLabel.Text = "FailedTaksCountLabel";
             // 
@@ -147,9 +157,10 @@
             // 
             this.DateLabel.AutoSize = true;
             this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.DateLabel.Location = new System.Drawing.Point(230, 110);
+            this.DateLabel.Location = new System.Drawing.Point(307, 135);
+            this.DateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(65, 13);
+            this.DateLabel.Size = new System.Drawing.Size(82, 17);
             this.DateLabel.TabIndex = 12;
             this.DateLabel.Text = "DateLabel";
             // 
@@ -157,9 +168,10 @@
             // 
             this.TaskCountLabel.AutoSize = true;
             this.TaskCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.TaskCountLabel.Location = new System.Drawing.Point(230, 130);
+            this.TaskCountLabel.Location = new System.Drawing.Point(307, 160);
+            this.TaskCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TaskCountLabel.Name = "TaskCountLabel";
-            this.TaskCountLabel.Size = new System.Drawing.Size(99, 13);
+            this.TaskCountLabel.Size = new System.Drawing.Size(125, 17);
             this.TaskCountLabel.TabIndex = 11;
             this.TaskCountLabel.Text = "TaskCountLabel";
             // 
@@ -167,17 +179,18 @@
             // 
             this.SuccessTasksCountLabel.AutoSize = true;
             this.SuccessTasksCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.SuccessTasksCountLabel.Location = new System.Drawing.Point(230, 150);
+            this.SuccessTasksCountLabel.Location = new System.Drawing.Point(307, 185);
+            this.SuccessTasksCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SuccessTasksCountLabel.Name = "SuccessTasksCountLabel";
-            this.SuccessTasksCountLabel.Size = new System.Drawing.Size(153, 13);
+            this.SuccessTasksCountLabel.Size = new System.Drawing.Size(193, 17);
             this.SuccessTasksCountLabel.TabIndex = 10;
             this.SuccessTasksCountLabel.Text = "SuccessTasksCountLabel";
             // 
             // TestResultForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 277);
+            this.ClientSize = new System.Drawing.Size(643, 341);
             this.Controls.Add(this.TimeSpentLabel);
             this.Controls.Add(this.FailedTaksCountLabel);
             this.Controls.Add(this.DateLabel);
@@ -191,8 +204,9 @@
             this.Controls.Add(this.StudentInfoLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TestResultForm";
-            this.Text = "TestResultForm";
+            this.Text = "Тестирование";
             this.ResumeLayout(false);
             this.PerformLayout();
 

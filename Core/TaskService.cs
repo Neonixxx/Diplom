@@ -8,12 +8,12 @@ namespace Core
 {
     public class TaskService
     {
-        private List<StraightLineTaskGenerator> _taskGenerators = new StraightLineTaskGenerator[]
+        private List<StraightLineTaskGenerator> _taskGenerators = new List<StraightLineTaskGenerator>
         {
-            new NormalVectorTaskGenerator(),
             new TwoPointsOnLineTaskGenerator(),
-            new NormalFromPointTaskGenerator(),
+            new NormalVectorTaskGenerator(),
             new ParallelVectorTaskGenerator(),
+            new NormalFromPointTaskGenerator(),
             new DistanceFromPointTaskGenerator(),
             new SegmentIntersectionTaskGenerator(),
         }.Shuffle().ToList();
