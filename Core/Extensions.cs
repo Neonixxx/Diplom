@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Fractions;
 
@@ -24,9 +25,18 @@ namespace Core
         }
 
         public static Fraction[] ToFractions(this string str)
-            => str.Split(new string[] { ",", ", " }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(Fraction.FromString)
-                .ToArray();
+        {
+            try
+            {
+                return str.Split(new[] {",", ", "}, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(Fraction.FromString)
+                    .ToArray();
+            }
+            catch
+            {
+                return new Fraction[0];
+            }
+        }
 
         public static string ToStringWithPlus(this Fraction fraction)
             => fraction.IsPositive
@@ -38,7 +48,25 @@ namespace Core
                 ? "0"
                 : fraction.ToString();
 
+        public static string EmptyInOne(this string str)
+        {
+            switch (str)
+            {
+                case "1": return "";
+                case "+1": return "+";
+                case "-1": return "-";
+                default: return str;
+            }
+        }
+
         public static bool FlipCoin(this Random random)
             => random.Next() % 2 == 1;
+
+        public static string ToPercent(this double percent, int decimalDigits = 2)
+        {
+            var numberFormat = new CultureInfo("en-US").NumberFormat;
+            numberFormat.PercentDecimalDigits = decimalDigits;
+            return percent.ToString("P", numberFormat);
+        }
     }
 }

@@ -5,6 +5,11 @@ namespace Core.StraightLineTaskGenerators
     // 3
     public class NormalVectorTaskGenerator: StraightLineTaskGenerator
     {
+        public NormalVectorTaskGenerator()
+        {
+            TaskName = "Нормальный вектор прямой";
+        }
+
         public override bool CheckResult(string answer)
         {
             var answers = answer.ToFractions();

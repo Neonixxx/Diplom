@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Fractions;
 
@@ -7,6 +6,8 @@ namespace Core.StraightLineTaskGenerators
 {
     public abstract class StraightLineTaskGenerator
     {
+        public string TaskName { get; protected set; }
+
         protected Fraction A;
         protected Fraction B;
         protected Fraction C;
@@ -31,15 +32,15 @@ namespace Core.StraightLineTaskGenerators
             => A.Multiply(x) + B.Multiply(y) + C == 0;
 
         protected bool IsLineRight(Fraction x, Fraction y, Fraction k)
-            => !x.IsZero || !y.IsZero || !k.IsZero;
+            => !x.IsZero && !y.IsZero && !k.IsZero;
 
         protected string GetLineString(Fraction x, Fraction y, Fraction k)
         {
             var lineStringBuilder = new StringBuilder();
             if (!x.IsZero)
-                lineStringBuilder.Append($"{x.ToStringWithZero()}x ");
+                lineStringBuilder.Append($"{x.ToStringWithZero().EmptyInOne()}x ");
             if (!y.IsZero)
-                lineStringBuilder.Append($"{y.ToStringWithPlus()}y ");
+                lineStringBuilder.Append($"{y.ToStringWithPlus().EmptyInOne()}y ");
             if (!k.IsZero)
                 lineStringBuilder.Append($"{k.ToStringWithPlus()} ");
             if (lineStringBuilder[0] == '+')

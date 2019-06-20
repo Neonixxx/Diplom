@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.StraightLineTaskGenerators;
+using Diplom;
 
 namespace Core
 {
@@ -13,8 +14,11 @@ namespace Core
             new TwoPointsOnLineTaskGenerator(),
             new NormalFromPointTaskGenerator(),
             new ParallelVectorTaskGenerator(),
-            new DistanceFromPointTaskGenerator(), 
+            new DistanceFromPointTaskGenerator(),
+            new SegmentIntersectionTaskGenerator(),
         }.Shuffle().ToList();
+
+        private List<TaskResult> _taskResults = new List<TaskResult>();
 
         private readonly Random _random = new Random();
         public int _currentTaskIndex = 0;
@@ -26,18 +30,28 @@ namespace Core
         public TaskService()
         {
             CurrentTaskGenerator.Initialize(_random);
+            for (int i = 0; i < _taskGenerators.Count; i++)
+                _taskResults.Add(TaskResult.None);
         }
 
-        public void GoToNextTask()
+        public TestResult GetTestResult()
+        {
+            var testResult = new TestResult();
+            for (int i = 0; i < _taskGenerators.Count; i++)
+                testResult.TaskResults.Add((_taskGenerators[i].TaskName, _taskResults[i]));
+
+            return testResult;
+        }
+
+        public bool GoToNextTask()
         {
             _currentTaskIndex++;
 
-            // Временно
             if (_currentTaskIndex == _taskGenerators.Count)
-                _currentTaskIndex = 0;
-            //
+                return true;
 
             CurrentTaskGenerator.Initialize(_random);
+            return false;
         }
 
         public bool CheckResult(string answer)
@@ -45,5 +59,14 @@ namespace Core
 
         public string GetTaskString()
             => CurrentTaskGenerator.GetString();
+
+        public void SaveResult(string answer)
+        {
+            var result = CheckResult(answer);
+            if (result)
+                _taskResults[_currentTaskIndex] = TaskResult.Success;
+            else
+                _taskResults[_currentTaskIndex] = TaskResult.Failed;
+        }
     }
 }

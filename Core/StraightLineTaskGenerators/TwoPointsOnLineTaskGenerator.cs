@@ -6,6 +6,11 @@ namespace Core.StraightLineTaskGenerators
     // 2
     public class TwoPointsOnLineTaskGenerator : StraightLineTaskGenerator
     {
+        public TwoPointsOnLineTaskGenerator()
+        {
+            TaskName = "Точки на прямой";
+        }
+
         public override void Initialize(Random random)
         {
             do

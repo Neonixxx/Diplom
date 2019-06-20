@@ -11,24 +11,29 @@ namespace Core.StraightLineTaskGenerators
         private Fraction _mA;
         private Fraction _mB;
 
+        public DistanceFromPointTaskGenerator()
+        {
+            TaskName = "Расстояние от точки до прямой";
+        }
+
         public override void Initialize(Random random)
         {
             base.Initialize(random);
 
-            var pair = _possiblePairs[random.Next(0, _possiblePairs.Length)];
+            var (x, y) = _possiblePairs[random.Next(0, _possiblePairs.Length)];
             if (random.FlipCoin())
             {
-                var temp = pair.Item1;
-                pair.Item1 = pair.Item2;
-                pair.Item2 = temp;
+                var temp = x;
+                x = y;
+                y = temp;
             }
             if (random.FlipCoin())
-                pair.Item1 *= -1;
+                x *= -1;
             if (random.FlipCoin())
-                pair.Item2 *= -1;
+                y *= -1;
 
-            A = pair.Item1;
-            B = pair.Item2;
+            A = x;
+            B = y;
             NormalizeLine();
 
             do

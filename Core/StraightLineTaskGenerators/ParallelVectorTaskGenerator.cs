@@ -5,6 +5,11 @@ namespace Core.StraightLineTaskGenerators
     // 8
     public class ParallelVectorTaskGenerator : StraightLineTaskGenerator
     {
+        public ParallelVectorTaskGenerator()
+        {
+            TaskName = "Направляющий вектор прямой";
+        }
+
         public override bool CheckResult(string answer)
         {
             var answers = answer.ToFractions();

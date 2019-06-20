@@ -7,6 +7,12 @@ namespace Core.StraightLineTaskGenerators
     public class NormalFromPointTaskGenerator : StraightLineTaskGenerator
     {
         private Fraction _mA;
+
+        public NormalFromPointTaskGenerator()
+        {
+            TaskName = "Перпендикуляр к прямой через точку";
+        }
+
         private Fraction _mB;
 
         public override void Initialize(Random random)
