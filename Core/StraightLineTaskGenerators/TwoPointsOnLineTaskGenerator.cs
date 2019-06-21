@@ -13,16 +13,11 @@ namespace Core.StraightLineTaskGenerators
 
         public override void Initialize(Random random)
         {
+            base.Initialize(random);
+
             do
             {
-                var x1 = new Fraction(random.Next(-10, 11));
-                var y1 = new Fraction(random.Next(-10, 11));
-                var x2 = new Fraction(random.Next(-10, 11));
-                var y2 = new Fraction(random.Next(-10, 11));
-
-                A = y1 - y2;
-                B = x2 - x1;
-                C = x1 * y2 - x2 * y1;
+                C = A * B * random.Next(-9, 10);
             } while (!IsLineRight(A, B, C));
 
             NormalizeLine();

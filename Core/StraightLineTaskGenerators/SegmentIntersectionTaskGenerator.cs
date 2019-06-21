@@ -24,11 +24,12 @@ namespace Core.StraightLineTaskGenerators
 
             do
             {
+                C = random.Next(-9, 10);
                 _ax = new Fraction(random.Next(-10, 11));
                 _ay = new Fraction(random.Next(-10, 11));
                 _bx = new Fraction(random.Next(-10, 11));
                 _by = new Fraction(random.Next(-10, 11));
-            } while (IsPointOnLine((_ax), _ay) || IsPointOnLine(_bx, _by));
+            } while (IsPointOnLine((_ax), _ay) || IsPointOnLine(_bx, _by) || !IsLineRight(A, B, C));
         }
 
         public override bool CheckResult(string answer)
@@ -68,8 +69,7 @@ namespace Core.StraightLineTaskGenerators
         {
             return $"{base.GetString()}" +
                    $"{Environment.NewLine}Пересекает ли эта прямая отрезок [AB], если " +
-                   $"A({_ax.ToStringWithZero()}, {_ay.ToStringWithZero()}), " +
-                   $"B({_bx.ToStringWithZero()}, {_by.ToStringWithZero()}) (Да, Нет)?";
+                   $"A{FormatPoint(_ax,_ay)}, B{FormatPoint(_bx, _by)} (Да, Нет)?";
         }
     }
 }

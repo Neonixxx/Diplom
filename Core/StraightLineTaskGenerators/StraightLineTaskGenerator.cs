@@ -31,18 +31,18 @@ namespace Core.StraightLineTaskGenerators
         protected bool IsPointOnLine(Fraction x, Fraction y)
             => A.Multiply(x) + B.Multiply(y) + C == 0;
 
-        protected bool IsLineRight(Fraction x, Fraction y, Fraction k)
-            => !x.IsZero && !y.IsZero && !k.IsZero;
+        protected bool IsLineRight(Fraction a, Fraction b, Fraction c)
+            => !a.IsZero && !b.IsZero && !c.IsZero;
 
-        protected string GetLineString(Fraction x, Fraction y, Fraction k)
+        protected string GetLineString(Fraction a, Fraction b, Fraction c)
         {
             var lineStringBuilder = new StringBuilder();
-            if (!x.IsZero)
-                lineStringBuilder.Append($"{x.ToStringWithZero().EmptyInOne()}x ");
-            if (!y.IsZero)
-                lineStringBuilder.Append($"{y.ToStringWithPlus().EmptyInOne()}y ");
-            if (!k.IsZero)
-                lineStringBuilder.Append($"{k.ToStringWithPlus()} ");
+            if (!a.IsZero)
+                lineStringBuilder.Append($"{a.ToStringWithZero().EmptyInOne()}x ");
+            if (!b.IsZero)
+                lineStringBuilder.Append($"{b.ToStringWithPlus().EmptyInOne()}y ");
+            if (!c.IsZero)
+                lineStringBuilder.Append($"{c.ToStringWithPlus()} ");
             if (lineStringBuilder[0] == '+')
                 lineStringBuilder.Remove(0, 1);
             lineStringBuilder.Remove(lineStringBuilder.Length - 1, 1);
@@ -63,5 +63,8 @@ namespace Core.StraightLineTaskGenerators
             B /= multiplier;
             C /= multiplier;
         }
+
+        protected string FormatPoint(Fraction x, Fraction y)
+            => $"({x.ToStringWithZero()}, {y.ToStringWithZero()})";
     }
 }

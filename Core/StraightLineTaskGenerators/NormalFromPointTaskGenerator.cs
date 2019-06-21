@@ -43,8 +43,7 @@ namespace Core.StraightLineTaskGenerators
         public override string GetString()
         {
             return $"{base.GetString()}" +
-                   $"{Environment.NewLine}Составить уравнение перпендикуляра Ax + By + C = 0, опущенного на эту прямую из точки " +
-                   $"M({_mA.ToStringWithZero()}; {_mB.ToStringWithZero()})." +
+                   $"{Environment.NewLine}Составить уравнение перпендикуляра Ax + By + C = 0, опущенного на эту прямую из точки M{FormatPoint(_mA, _mB)}." +
                    $"{Environment.NewLine}Ответ введите в формате: \"A, B, C\".";
         }
     }

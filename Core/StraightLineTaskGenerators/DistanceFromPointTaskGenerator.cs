@@ -53,14 +53,16 @@ namespace Core.StraightLineTaskGenerators
             // d = |A * mA + B * mB + C| / sqrt(A^2 + B^2)
             // Прямая: Ax + By + C = 0
             // Точка: (mA, mB)
-            return answers[0] ==
-                   (A * _mA + B * _mB + C).Abs() / new Fraction(Math.Sqrt((A * A + B + B).ToInt32()));
+            return answers[0] == GetDistanceFromPoint();
         }
+
+        private Fraction GetDistanceFromPoint()
+            => (A * _mA + B * _mB + C).Abs() / new Fraction(Math.Sqrt((A * A + B + B).ToInt32()));
 
         public override string GetString()
         {
             return $"{base.GetString()}" +
-                   $"{Environment.NewLine}Найти расстояние от точки M({_mA.ToStringWithZero()}; {_mB.ToStringWithZero()})" +
+                   $"{Environment.NewLine}Найти расстояние от точки M{FormatPoint(_mA, _mB)}" +
                    $"{Environment.NewLine}(Пример: 16/3).";
         }
     }

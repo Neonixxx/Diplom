@@ -1,4 +1,5 @@
 ﻿using System;
+using Fractions;
 
 namespace Core.StraightLineTaskGenerators
 {
@@ -17,9 +18,12 @@ namespace Core.StraightLineTaskGenerators
             if (answers.Length != 2)
                 return false;
 
-            return answers[0] == B && answers[1] == A.Multiply(-1)
-                   || answers[0] == B.Multiply(-1) && answers[1] == A;
+            return IsVectorNormalToLine(answers[0], answers[1]);
         }
+
+        private bool IsVectorNormalToLine(Fraction x, Fraction y)
+            => x == B && y == A.Multiply(-1)
+               || x == B.Multiply(-1) && y == A;
 
         public override string GetString()
         {
