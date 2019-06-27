@@ -16,7 +16,8 @@ namespace Core
             new NormalFromPointTaskGenerator(),
             new DistanceFromPointTaskGenerator(),
             new SegmentIntersectionTaskGenerator(),
-        }.Shuffle().ToList();
+            new LinesIntersectionPointTaskGenerator(),
+        }/*.Shuffle()*/.ToList();
 
         private List<TaskResult> _taskResults = new List<TaskResult>();
 

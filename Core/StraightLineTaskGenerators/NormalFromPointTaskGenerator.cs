@@ -6,14 +6,12 @@ namespace Core.StraightLineTaskGenerators
     // 14
     public class NormalFromPointTaskGenerator : StraightLineTaskGenerator
     {
-        private Fraction _mA;
+        private Point _point = new Point();
 
         public NormalFromPointTaskGenerator()
         {
             TaskName = "Перпендикуляр к прямой через точку";
         }
-
-        private Fraction _mB;
 
         public override void Initialize(Random random)
         {
@@ -21,29 +19,27 @@ namespace Core.StraightLineTaskGenerators
 
             do
             {
-                _mA = new Fraction(random.Next(-10, 11));
-                _mB = new Fraction(random.Next(-10, 11));
-            } while (IsPointOnLine(_mA, _mB));
+                _point.X = new Fraction(random.Next(-10, 11));
+                _point.Y = new Fraction(random.Next(-10, 11));
+            } while (Line.IsPointOnLine(_point));
         }
 
         public override bool CheckResult(string answer)
         {
-            var answers = answer.ToFractions();
+            var answers = answer.ToInts();
 
             if (answers.Length != 3)
                 return false;
 
-            // Уравнение перпендикулярной прямой, проходящей через точку:
-            // Bx - By + A * mB - B * mA = 0
-            // Точка: (mA, mB)
-            return answers[0] == B && answers[1] == A.Multiply(-1) && answers[2] == A * _mB - B * _mA
-                || answers[0].Multiply(-1) == B && answers[1].Multiply(-1) == A.Multiply(-1) && answers[2].Multiply(-1) == A * _mB - B * _mA;
+            var answerLine = new StraightLine(answers[0], answers[1], answers[2]);
+
+            return Line.IsNormalTo(answerLine) && answerLine.IsPointOnLine(_point);
         }
 
         public override string GetString()
         {
             return $"{base.GetString()}" +
-                   $"{Environment.NewLine}Составить уравнение перпендикуляра Ax + By + C = 0, опущенного на эту прямую из точки M{FormatPoint(_mA, _mB)}." +
+                   $"{Environment.NewLine}Составить уравнение перпендикуляра Ax + By + C = 0, опущенного на эту прямую из точки M{_point}." +
                    $"{Environment.NewLine}Ответ введите в формате: \"A, B, C\".";
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Core
@@ -32,6 +33,36 @@ namespace Core
             }
 
             return a;
+        }
+
+        public static List<int> GetSimpleMultipliers(int number)
+        {
+            var temp = number;
+            var result = new List<int>();
+            if (temp > 0)
+                result.Add(1);
+            else if (temp < 0)
+            {
+                result.Add(-1);
+                temp *= -1;
+            }
+            else
+                return result;
+
+            while (temp != 1)
+            {
+                for (var i = 2; i <= temp; i++)
+                {
+                    if (temp % i == 0)
+                    {
+                        result.Add(i);
+                        temp /= i;
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

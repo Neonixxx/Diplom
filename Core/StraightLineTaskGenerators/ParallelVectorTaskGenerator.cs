@@ -1,5 +1,4 @@
 ﻿using System;
-using Fractions;
 
 namespace Core.StraightLineTaskGenerators
 {
@@ -13,17 +12,15 @@ namespace Core.StraightLineTaskGenerators
 
         public override bool CheckResult(string answer)
         {
-            var answers = answer.ToFractions();
+            var answers = answer.ToInts();
 
             if (answers.Length != 2)
                 return false;
 
-            return IsVectorParallelToLine(answers[0], answers[1]);
-        }
+            var vector = new Vector(answers[0], answers[1]);
 
-        private bool IsVectorParallelToLine(Fraction x, Fraction y)
-            => x == B.Multiply(-1) && y == A
-               || x == B && y == A.Multiply(-1);
+            return Line.IsParallelTo(vector);
+        }
 
         public override string GetString()
         {

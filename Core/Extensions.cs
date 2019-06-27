@@ -38,17 +38,26 @@ namespace Core
             }
         }
 
-        public static string ToStringWithPlus(this Fraction fraction)
-            => fraction.IsPositive
-                ? $"+{fraction.ToString()}"
-                : fraction.ToStringWithZero();
+        public static int[] ToInts(this string str)
+        {
+            try
+            {
+                return str.Split(new[] { ",", ", " }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => Convert.ToInt32(s))
+                    .ToArray();
+            }
+            catch
+            {
+                return new int[0];
+            }
+        }
 
-        public static string ToStringWithZero(this Fraction fraction)
-            => fraction.IsZero
-                ? "0"
-                : fraction.ToString();
+        public static string ToStringWithPlus(this int number)
+            => number > 0
+                ? $"+{number}"
+                : number.ToString();
 
-        public static string EmptyInOne(this string str)
+        public static string EmptyIfOne(this string str)
         {
             switch (str)
             {

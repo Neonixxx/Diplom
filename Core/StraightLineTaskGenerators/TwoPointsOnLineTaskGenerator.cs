@@ -1,5 +1,4 @@
 ﻿using System;
-using Fractions;
 
 namespace Core.StraightLineTaskGenerators
 {
@@ -17,10 +16,10 @@ namespace Core.StraightLineTaskGenerators
 
             do
             {
-                C = A * B * random.Next(-9, 10);
-            } while (!IsLineRight(A, B, C));
+                Line.C = Line.A * Line.B * random.Next(-9, 10);
+            } while (!Line.IsRight());
 
-            NormalizeLine();
+            Line.Normalize();
         }
 
         public override bool CheckResult(string answer)
@@ -30,8 +29,8 @@ namespace Core.StraightLineTaskGenerators
             if (answers.Length != 4)
                 return false;
 
-            return IsPointOnLine(answers[0], answers[1])
-                && IsPointOnLine(answers[2], answers[3]);
+            return Line.IsPointOnLine(new Point(answers[0], answers[1]))
+                && Line.IsPointOnLine(new Point(answers[2], answers[3]));
         }
 
         public override string GetString()
